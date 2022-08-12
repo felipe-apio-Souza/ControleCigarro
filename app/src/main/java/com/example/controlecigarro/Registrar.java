@@ -60,14 +60,14 @@ public class Registrar extends AppCompatActivity {
         if(email.contains("@")){
             int p = this.email.getText().toString().indexOf("@");
             cortarEmail = this.email.getText().toString().substring(p);
+
+            if(cortarEmail.contains("1")){
+
+            }else{
+                i++;
+            }
         }else{
             print("Email invalido");
-            i++;
-        }
-
-        if(cortarEmail.contains("1")){
-
-        }else{
             i++;
         }
 

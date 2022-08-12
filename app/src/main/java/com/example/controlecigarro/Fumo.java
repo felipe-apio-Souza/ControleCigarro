@@ -1,9 +1,11 @@
 package com.example.controlecigarro;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.Date;
 
 public class Fumo {
-    private Long id;
     private String emailUser;
     private String tipo;
     private Integer qtd;
@@ -12,21 +14,13 @@ public class Fumo {
     public Fumo() {
     }
 
-    public Fumo(Long id, String emailUser, String tipo, Integer qtd, Date date) {
-        this.id = id;
+    public Fumo(String emailUser, String tipo, Integer qtd, Date date) {
         this.emailUser = emailUser;
         this.tipo = tipo;
         this.qtd = qtd;
         this.date = date;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getEmailUser() {
         return emailUser;
@@ -58,5 +52,10 @@ public class Fumo {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public void salvar(){
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
+        reference.child("Fumo").child(emailUser).setValue(this);
     }
 }
