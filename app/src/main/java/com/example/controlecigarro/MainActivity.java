@@ -41,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
     public void verifica_usuario(View view){
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("Usuarios");
+        if(entrar.getText().toString().contains(".")){
+            this.entrar.setText(this.entrar.getText().toString().replace(".", "1"));
+        }
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
