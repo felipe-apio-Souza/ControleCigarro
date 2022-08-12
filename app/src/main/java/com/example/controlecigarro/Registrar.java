@@ -22,7 +22,7 @@ import java.util.List;
 public class Registrar extends AppCompatActivity {
     EditText email, senha, senhaConfirm;
     Usuario usuario;
-    String mensagem;
+    String cortarEmail;
     List<String> c = new ArrayList<>();
     CheckBox cigarro, charuto, cigarroPalha, vape, cachimbo, narguile;
     int i;
@@ -113,9 +113,16 @@ public class Registrar extends AppCompatActivity {
         }
 
         if(email.contains("@")){
-
+            int p = this.email.getText().toString().indexOf("@");
+            cortarEmail = this.email.getText().toString().substring(p);
         }else{
             print("Email invalido");
+            i++;
+        }
+
+        if(cortarEmail.contains("1")){
+
+        }else{
             i++;
         }
 
@@ -132,6 +139,10 @@ public class Registrar extends AppCompatActivity {
 
     public void verifica_usuario(View view){
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("Usuarios");
+        if(email.getText().toString().contains(".")){
+            this.email.setText(this.email.getText().toString().replace(".", "1"));
+        }
+
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -140,7 +151,7 @@ public class Registrar extends AppCompatActivity {
                 i = 0;
                 for(DataSnapshot d : snapshot.getChildren()){
                     uso = d.getValue(Usuario.class);
-                    System.out.println(uso.getEmail());
+
                     if(uso.getEmail().equals(l)){
                         //existir
                         i = 1;

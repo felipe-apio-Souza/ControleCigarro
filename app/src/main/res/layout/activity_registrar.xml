@@ -71,17 +71,14 @@
         android:id="@+id/button"
         android:layout_width="211dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
         android:layout_marginTop="40dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginBottom="125dp"
         android:backgroundTint="#CA3E47"
         android:onClick="verifica_usuario"
         android:text="Cadastre-se"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cigarroPalha"
+        app:layout_constraintTop_toBottomOf="@+id/vape"
         app:layout_constraintVertical_bias="0.0" />
 
     <CheckBox
