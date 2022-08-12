@@ -24,7 +24,6 @@ public class Registrar extends AppCompatActivity {
     Usuario usuario;
     String cortarEmail;
     List<String> c = new ArrayList<>();
-    CheckBox cigarro, charuto, cigarroPalha, vape, cachimbo, narguile;
     int i;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,61 +33,7 @@ public class Registrar extends AppCompatActivity {
         email = findViewById(R.id.emailRegister);
         senha = findViewById(R.id.senhaRegister);
         senhaConfirm = findViewById(R.id.senhaConfirmRegister);
-        cigarro = findViewById(R.id.cigarro);
-        charuto = findViewById(R.id.charuto);
-        cigarroPalha = findViewById(R.id.cigarroPalha);
-        vape = findViewById(R.id.vape);
-        cachimbo = findViewById(R.id.cachimbo);
-        narguile = findViewById(R.id.narguile);
 
-        cigarro.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(((CheckBox) v).isChecked()){
-                    c.add(cigarro.getText().toString());
-                }
-            }
-        });
-        charuto.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(((CheckBox) v).isChecked()){
-                    c.add(charuto.getText().toString());
-                }
-            }
-        });
-        cigarroPalha.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(((CheckBox) v).isChecked()){
-                    c.add(cigarroPalha.getText().toString());
-                }
-            }
-        });
-        vape.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(((CheckBox) v).isChecked()){
-                    c.add(vape.getText().toString());
-                }
-            }
-        });
-        cachimbo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(((CheckBox) v).isChecked()){
-                    c.add(cachimbo.getText().toString());
-                }
-            }
-        });
-        narguile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(((CheckBox) v).isChecked()){
-                    c.add(narguile.getText().toString());
-                }
-            }
-        });
     }
 
     public void register(){
