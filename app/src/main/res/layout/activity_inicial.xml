@@ -15,6 +15,7 @@
         android:layout_marginTop="100dp"
         android:layout_marginEnd="100dp"
         android:backgroundTint="#CA3E47"
+        android:onClick="cigarro"
         android:text="Cigarro"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,6 +32,7 @@
         android:layout_marginTop="40dp"
         android:layout_marginEnd="100dp"
         android:backgroundTint="#CA3E47"
+        android:onClick="narguile"
         android:text="Narguilé"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -47,6 +49,7 @@
         android:layout_marginTop="40dp"
         android:layout_marginEnd="100dp"
         android:backgroundTint="#CA3E47"
+        android:onClick="vape"
         android:text="Vape"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -63,12 +66,13 @@
         android:layout_marginTop="40dp"
         android:layout_marginEnd="100dp"
         android:backgroundTint="#CA3E47"
+        android:onClick="cachimbo"
         android:text="Cachimbo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/vape"
-        app:layout_constraintVertical_bias="0.084" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/charuto"
@@ -78,6 +82,7 @@
         android:layout_marginTop="40dp"
         android:layout_marginEnd="100dp"
         android:backgroundTint="#CA3E47"
+        android:onClick="charuto"
         android:text="Charuto cubano"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
