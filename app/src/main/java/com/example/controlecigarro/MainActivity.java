@@ -17,7 +17,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
     EditText entrar, senha;
-    Usuario usuario;
+    static Usuario usuario;
     String mensagem;
     Boolean verifica;
     @Override
