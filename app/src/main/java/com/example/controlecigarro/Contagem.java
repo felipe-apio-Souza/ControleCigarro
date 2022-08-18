@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -26,23 +27,19 @@ public class Contagem extends AppCompatActivity {
 
         if(Inicial.i == 1){
             fumo.setText("cigarro");
-            cigarro();
         }else if(Inicial.i == 2){
             fumo.setText("charuto");
-            charuto();
         }else if(Inicial.i == 3){
             fumo.setText("vape");
-            vape();
         }else if(Inicial.i == 4){
             fumo.setText("narguile");
-            narguile();
         }else if(Inicial.i == 5){
             fumo.setText("cachimbo");
-            cachimbo();
         }
     }
 
     public void cigarro(){
+
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("Cigarro");
         reference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -204,6 +201,18 @@ public class Contagem extends AppCompatActivity {
             }
         });
 
-
+    }
+    public void botao(View view){
+        if(Inicial.i == 1){
+            cigarro();
+        }else if(Inicial.i == 2){
+            charuto();
+        }else if(Inicial.i == 3){
+            vape();
+        }else if(Inicial.i == 4){
+            narguile();
+        }else if(Inicial.i == 5){
+            cachimbo();
+        }
     }
 }

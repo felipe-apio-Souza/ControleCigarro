@@ -35,6 +35,7 @@
         android:layout_marginEnd="100dp"
         android:layout_marginBottom="495dp"
         android:backgroundTint="#CA3E47"
+        android:onClick="botao"
         android:text="fumei"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
