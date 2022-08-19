@@ -10,6 +10,9 @@ public class Vape extends Fumo{
         super(emailUser, qtd);
     }
 
+    public Vape() {
+
+    }
 
 
     public void salvar(){

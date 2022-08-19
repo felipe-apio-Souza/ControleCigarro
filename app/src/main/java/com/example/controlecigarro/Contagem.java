@@ -3,6 +3,7 @@ package com.example.controlecigarro;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -39,27 +40,34 @@ public class Contagem extends AppCompatActivity {
     }
 
     public void cigarro(){
-
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("Cigarro");
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String l = MainActivity.usuario.getEmail();
                 for(DataSnapshot d : snapshot.getChildren()){
-                    String l = MainActivity.usuario.getEmail();
+                    System.out.println(l);
+                    System.out.println(d.getValue(Cigarro.class).getEmailUser());
+                    System.out.println(d.getValue(Cigarro.class).getEmailUser().equals(l));
+
                     if(d.getValue(Cigarro.class).getEmailUser().equals(l)){
                         i = d.getValue(Cigarro.class).getQtd();
                         i++;
                         Cigarro cigarro = new Cigarro(l, i);
                         cigarro.salvar();
                         t = true;
+                        System.out.println("TESTE");
                         break;
                     }else{
                         t = false;
+
                     }
                 }
-                if(t = false){
-                    Cigarro cigarro = new Cigarro(MainActivity.usuario.getEmail(), i);
+
+                if(t == false){
+                    Cigarro cigarro = new Cigarro(MainActivity.usuario.getEmail(), i++);
                     cigarro.salvar();
+                    mudaTela();
                 }
             }
 
@@ -93,6 +101,7 @@ public class Contagem extends AppCompatActivity {
                 if(t = false){
                     Charuto charuto = new Charuto(MainActivity.usuario.getEmail(), i);
                     charuto.salvar();
+                    mudaTela();
                 }
             }
 
@@ -214,5 +223,10 @@ public class Contagem extends AppCompatActivity {
         }else if(Inicial.i == 5){
             cachimbo();
         }
+    }
+
+    public void mudaTela(){
+        Intent i = new Intent(this, Inicial.class);
+        startActivity(i);
     }
 }
